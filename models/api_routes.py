@@ -1,6 +1,5 @@
 from flask import request
 from flask.json import jsonify
-from models.questiongenerator import QuestionGenerator
 from flask_cors import CORS
 from flask import Blueprint
 from models.notes import extract_summary
