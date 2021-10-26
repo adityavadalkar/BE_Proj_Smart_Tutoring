@@ -19,7 +19,7 @@ CORS(api)
 '''
 
 
-@api.route("/qna")
+'''@api.route("/qna")
 def qna():
     #df = pd.read_csv('final_data.csv')
     #chapter = df.iloc[3]['0']
@@ -30,7 +30,7 @@ def qna():
     qg = QuestionGenerator()
     qa_list = qg.generate(chapter)
     print(qa_list)
-    return jsonify(qa_list)
+    return jsonify(qa_list)'''
 
 
 '''qa_list = subprocess.check_output(

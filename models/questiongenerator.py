@@ -1,4 +1,4 @@
-import numpy as np
+'''import numpy as np
 import torch
 import re
 import random
@@ -237,11 +237,7 @@ class QuestionGenerator:
     ):
         if num_questions > len(scores):
             num_questions = len(scores)
-            '''print(
-                "\nWas only able to generate {} questions. For more questions, please input a longer text.".format(
-                    num_questions
-                )
-            )'''
+           
 
         qa_list = []
         for i in range(num_questions):
@@ -360,3 +356,4 @@ def print_qa(qa_list, show_answers=True):
         else:
             if show_answers:
                 print("{}A:".format(space), answer, "\n")
+'''
