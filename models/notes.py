@@ -1,7 +1,7 @@
 import spacy
 import pytextrank
 nlp = spacy.load("en_core_web_sm")
-nlp.add_pipe("textrank")
+nlp.add_pipe(pytextrank.TextRank().PipelineComponent, "textrank")
 
 
 def extract_summary(data, limit_sentences=5, preserve_order=True):
