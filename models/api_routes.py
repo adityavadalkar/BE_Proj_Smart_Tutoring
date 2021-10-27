@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask import Blueprint
 from models.notes import extract_summary
 from models.recommend import rec
+from models.questiongenerator import QuestionGenerator
 
 api = Blueprint(
     'api', 'api', url_prefix='/')
@@ -18,7 +19,7 @@ CORS(api)
 '''
 
 
-'''@api.route("/qna")
+@api.route("/qna", methods=['POST'])
 def qna():
     #df = pd.read_csv('final_data.csv')
     #chapter = df.iloc[3]['0']
@@ -29,7 +30,7 @@ def qna():
     qg = QuestionGenerator()
     qa_list = qg.generate(chapter)
     print(qa_list)
-    return jsonify(qa_list)'''
+    return jsonify(qa_list)
 
 
 '''qa_list = subprocess.check_output(
@@ -40,7 +41,7 @@ def qna():
 ''
 
 
-@api.route("/notes")
+@api.route("/notes", methods=['POST'])
 def notes():
     #df = pd.read_csv('final_data.csv')
     request_data = request.get_json()
@@ -48,7 +49,7 @@ def notes():
     return jsonify(extract_summary(chapter, 3, True))
 
 
-@api.route("/recommend")
+@api.route("/recommend", methods=['POST'])
 def recommend():
     #df = pd.read_csv('final_data.csv')
     # print(str(df.iloc[0]['0']))
