@@ -10,13 +10,3 @@ automatic_scaling:
 
 resources:
   memory_gb: 6.1
-
-liveness_check:
-  path: "/liveness_check"
-  check_interval_sec: 300
-  timeout_sec: 299
-
-readiness_check:
-  path: "/readiness_check"
-  check_interval_sec: 300
-  timeout_sec: 299
