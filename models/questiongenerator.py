@@ -30,10 +30,10 @@ class QuestionGenerator:
         self.qa_evaluator = QAEvaluator(model_dir)
 
     def generate(
-        self, article, use_evaluator=True, num_questions=None, answer_style="all"
+        self, article, use_evaluator=True, num_questions=None, answer_style="multiple_choice"
     ):
 
-        #print("Generating questions...\n")
+        print("Generating questions...\n")
 
         qg_inputs, qg_answers = self.generate_qg_inputs(article, answer_style)
         generated_questions = self.generate_questions_from_inputs(qg_inputs)
@@ -45,7 +45,7 @@ class QuestionGenerator:
 
         if use_evaluator:
 
-            #print("Evaluating QA pairs...\n")
+            print("Evaluating QA pairs...\n")
 
             encoded_qa_pairs = self.qa_evaluator.encode_qa_pairs(
                 generated_questions, qg_answers
