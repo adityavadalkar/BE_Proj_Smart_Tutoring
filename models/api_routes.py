@@ -5,6 +5,7 @@ from flask import Blueprint
 from models.notes import extract_summary
 from models.recommend import rec
 from models.questiongenerator import QuestionGenerator
+import pandas as pd
 
 api = Blueprint(
     'api', 'api', url_prefix='/')
@@ -25,11 +26,12 @@ def qna():
     #chapter = df.iloc[3]['0']
     request_data = request.get_json()
     chapter = request_data["chapter"]
+    print(chapter)
     #file = open("book.txt", 'w')
     # file.write(str(chapter))
     qg = QuestionGenerator()
     qa_list = qg.generate(chapter)
-    print(qa_list)
+    print("xyz", qa_list)
     return jsonify(qa_list)
 
 
