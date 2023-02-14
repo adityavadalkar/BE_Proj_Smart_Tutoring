@@ -30,7 +30,7 @@ class QuestionGenerator:
         self.qa_evaluator = QAEvaluator(model_dir)
 
     def generate(
-        self, article, use_evaluator=True, num_questions=None, answer_style="multiple_choice"
+        self, article, use_evaluator=True, num_questions=None, answer_style="sentences"
     ):
 
         print("Generating questions...\n")
